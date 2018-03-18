@@ -20,7 +20,6 @@ smoke-test:
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker run -d -p 80:80 $CI_REGISTRY_IMAGE:$CI_BUILD_REF
-    - sleep 5 && curl -I -L http://0.0.0.0:80
 
 release-master:
   stage: release
